@@ -1,0 +1,30 @@
+.weather-list-page
+	p.title Weather checker
+
+	.content
+		md-list
+			md-list-item
+				.list-item.list-header
+					p.city city:
+					p.country country:
+					p.temperature air temperature:
+					p.humidity humidity:
+					p.date updated:
+			md-list-item(
+				ng-repeat="item in vm.data"
+				ng-click="vm.openCity(item.id)")
+				.list-item
+					p.city {{ item.city }}
+					p.country {{ item.country }}
+					p.temperature {{ item.temperature }}
+					p.humidity {{ item.humidity }}
+					p.update {{ item.update | date:"MM/dd/yyyy 'at' h:mma"}}
+
+				md-button.md-secondary.md-fab.md-mini.md-primary(
+					aria-label="delete"
+					ng-click="vm.onDelete(item.id)")
+					i.material-icons delete
+
+.add-button-container
+	md-button.md-fab.md-primary(ng-click="vm.onAdd()")
+		i.material-icons add

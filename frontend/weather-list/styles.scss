@@ -1,0 +1,56 @@
+.weather-list-page {
+  width: 100%;
+	padding: 50px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  width: 100%;
+  margin: 0 auto;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	background: #DAD4F9;
+}
+
+md-list-item {
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+md-list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item {
+	width: 100%;
+	display: flex;
+	color: #111800;
+
+	p {
+		width: 20%;
+		text-align: center;
+		font-size: 12px;
+	}
+}
+
+.list-header {
+	padding-right: 48px;
+
+	p {
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+.add-button-container {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}

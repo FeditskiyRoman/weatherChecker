@@ -1,0 +1,38 @@
+.add-page-container
+	p.title {{vm.title}}
+
+	.content
+		md-autocomplete(
+			flex
+			md-no-cache="true"
+			md-selected-item="vm.selectedItem"
+			md-search-text="vm.searchText"
+			md-items="item in vm.querySearch(vm.searchText)"
+			md-item-text="item.value"
+			md-require-match
+			md-input-minlength="2"
+			md-input-maxlength="18"
+			md-selected-item-change="vm.getWeather()"
+			md-floating-label="city")
+			md-item-template
+				span {{item.display}}
+
+		md-input-container(class="md-block" flex-gt-xs="")
+			label country
+			input(
+				type='text'
+				ng-model='vm.data.country'
+				ng-change='vm.change')
+		md-input-container(class="md-block" flex-gt-xs="")
+			label temperature
+			input(
+				type='number'
+				ng-model='vm.data.temperature')
+		md-input-container(class="md-block" flex-gt-xs="")
+			label humidity
+			input(
+				type='number'
+				ng-model='vm.data.humidity')
+		.button-container
+			md-button(ng-click='vm.save()') save
+			md-button(ng-click='vm.back()') back

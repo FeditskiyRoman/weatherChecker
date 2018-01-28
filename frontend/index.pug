@@ -1,0 +1,16 @@
+html(ng-app='app')
+	head
+		title Test
+		meta(
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		link(rel="stylesheet" type="text/css" href="libs.css")
+		link(rel="stylesheet" type="text/css" href="app.css")
+		link(rel='stylesheet', href='//fonts.googleapis.com/icon?family=Material+Icons')
+	body.ng-cloak(ng-controller="mainCtrl as vm")
+		div.main-view(ng-view)
+		.spinner( ng-if="vm.showSpinner")
+			md-progress-circular.image(md-mode="indeterminate")
+
+		script(src="libs.js")
+		script(src="app.js")
