@@ -62,7 +62,7 @@
 				weatherListService.getWeather({
 					city: vm.selectedItem.id
 				}).then(function(res) {
-					vm.data.temperature = res.data.main.temp;
+					vm.data.temperature = res.data.main.temp / 32;
 					vm.data.humidity = res.data.main.humidity;
 				});
 			}
