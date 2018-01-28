@@ -1,4 +1,4 @@
-# CookingBookApp
+# Weather checker app
 
 node.js should be installed
 
