@@ -5,6 +5,8 @@ const request = require('request');
 const googlePlaces = require('node-googleplaces');
 const router = express.Router();
 const config = require('../config.js');
+const cityList = require('../files/city.list.js');
+
 
 //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
@@ -23,8 +25,10 @@ router.post('/api/place', function(request, response) {
 });
 
 router.post('/api/weather', function(req, res) {
-	var id = req.body.city;
-	var uri = 'http://samples.openweathermap.org/data/2.5/weather?id=' + id + '&appid=' + config.openWeatherApiKey;
+	var city = req.body.city;
+	var cityObj = cityList.find(item => item.name === city);
+
+	var uri = 'http://samples.openweathermap.org/data/2.5/weather?id=' + cityObj.id + '&appid=' + config.openWeatherApiKey;
 
 	request({
 		method: 'GET',

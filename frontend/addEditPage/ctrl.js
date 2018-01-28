@@ -60,10 +60,13 @@
 				vm.data.country = arr[arr.length - 1];
 
 				weatherListService.getWeather({
-					city: vm.selectedItem.id
+					city: arr[0]
 				}).then(function(res) {
+					console.log(res.data);
 					vm.data.temperature = res.data.main.temp / 32;
 					vm.data.humidity = res.data.main.humidity;
+					vm.data.wind = res.data.wind.speed,
+					vm.data.clouds = res.data.clouds.all
 				});
 			}
 		}

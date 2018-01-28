@@ -5,11 +5,14 @@
 		md-list
 			md-list-item
 				.list-item.list-header
-					p.city city:
-					p.country country:
-					p.temperature air temperature:
-					p.humidity humidity:
-					p.date updated:
+					p.city city
+					p.country country
+					p.temperature temperature &#8451;
+					p.humidity humidity %
+					p.wind wind 
+						span m/s
+					p.clouds clouds %
+					p.date updated
 			md-list-item(
 				ng-repeat="item in vm.data"
 				ng-click="vm.openCity(item.id)")
@@ -18,6 +21,8 @@
 					p.country {{ item.country }}
 					p.temperature {{ item.temperature }}
 					p.humidity {{ item.humidity }}
+					p.wind {{ item.wind }}
+					p.clouds {{ item.clouds }}
 					p.update {{ item.update | date:"MM/dd/yyyy 'at' h:mma"}}
 
 				md-button.md-secondary.md-fab.md-mini.md-primary(
