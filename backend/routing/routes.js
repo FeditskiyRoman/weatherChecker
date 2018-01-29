@@ -28,7 +28,7 @@ router.post('/api/weather', function(req, res) {
 	var city = req.body.city;
 	var cityObj = cityList.find(item => item.name === city);
 
-	var uri = 'http://samples.openweathermap.org/data/2.5/weather?id=' + cityObj.id + '&appid=' + config.openWeatherApiKey;
+	var uri = 'http://samples.openweathermap.org/data/2.5/weather?id=' + cityObj.id + '&APPID=' + config.openWeatherApiKey;
 
 	request({
 		method: 'GET',

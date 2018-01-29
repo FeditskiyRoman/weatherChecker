@@ -39,7 +39,7 @@
 						getWeatherList();
 						$mdToast.show(
 							$mdToast.simple()
-								.textContent('Recepie deleted!')
+								.textContent('Deleted!')
 								.position('bottom center')
 								.hideDelay(3000)
 						);
